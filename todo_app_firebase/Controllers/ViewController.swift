@@ -12,6 +12,17 @@ class ViewController: UITableViewController {
     // Properties
     
     let reuseIdentifier = "TodoCell"
+    
+    lazy var createNewButton: UIButton = {
+        let button = UIButton()
+        button.tintColor = .black
+        button.backgroundColor = .lightGray
+        button.setImage(UIImage(systemName: "plus.circle"), for: .normal)
+        button.layer.zPosition = CGFloat(Float.greatestFiniteMagnitude)
+        button.addTarget(self, action: #selector(createNewTodo), for: .touchUpInside)
+        return button
+       
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,24 +30,51 @@ class ViewController: UITableViewController {
         configureTableView()
     }
     
+    // Selectors
+    
+    @objc func createNewTodo(){
+        let vc = CreateTodoController()
+        present(vc, animated: true, completion: nil)
+    }
+    
     // Helper Func
     func configureTableView(){
-        tableView.backgroundColor = .lightGray
+        tableView.backgroundColor = .white
         tableView.register(TodoCell.self, forCellReuseIdentifier: reuseIdentifier)
-    }
-
+        tableView.rowHeight = 75
+        tableView.separatorColor = .black
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        tableView.tableFooterView = UIView()
+        
+        // Create new todo
+        tableView.addSubview(createNewButton)
+        createNewButton.anchor(bottom: tableView.safeAreaLayoutGuide.bottomAnchor, right: tableView.safeAreaLayoutGuide.rightAnchor,
+        paddingBottom: 16, paddingRight: 16, width: 56, height: 56)
+        createNewButton.layer.cornerRadius = 56 / 2
+        createNewButton.alpha = 1
+}
 }
 
 // UITableViewDelegate - UITableViewDataSource
 extension ViewController{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 10
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? TodoCell
+        else {
+            return UITableViewCell()
+        }
         return cell
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Update status of the cell
+        // Incomplete -> Finished
+        
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		94A11E4AB6AEF2CB8C0CA2AA /* Pods_todo_app_firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F766E414A54A79141F621116 /* Pods_todo_app_firebase.framework */; };
 		B10EDC492A95DD1300292512 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EDC482A95DD1300292512 /* TodoCell.swift */; };
+		B10EDC4F2A95E57500292512 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EDC4E2A95E57500292512 /* Extensions.swift */; };
+		B10EDC512A95FA4200292512 /* CreateTodoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EDC502A95FA4200292512 /* CreateTodoController.swift */; };
 		B13072262A95D3EF001DD4E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13072252A95D3EF001DD4E4 /* AppDelegate.swift */; };
 		B13072282A95D3EF001DD4E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13072272A95D3EF001DD4E4 /* SceneDelegate.swift */; };
 		B130722A2A95D3EF001DD4E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13072292A95D3EF001DD4E4 /* ViewController.swift */; };
@@ -22,6 +24,8 @@
 		5D1971DDFD023E18A68AC799 /* Pods-todo_app_firebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todo_app_firebase.debug.xcconfig"; path = "Target Support Files/Pods-todo_app_firebase/Pods-todo_app_firebase.debug.xcconfig"; sourceTree = "<group>"; };
 		AA3C6EDA2D31B8D8911B25C0 /* Pods-todo_app_firebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todo_app_firebase.release.xcconfig"; path = "Target Support Files/Pods-todo_app_firebase/Pods-todo_app_firebase.release.xcconfig"; sourceTree = "<group>"; };
 		B10EDC482A95DD1300292512 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
+		B10EDC4E2A95E57500292512 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B10EDC502A95FA4200292512 /* CreateTodoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodoController.swift; sourceTree = "<group>"; };
 		B13072222A95D3EF001DD4E4 /* todo_app_firebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todo_app_firebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13072252A95D3EF001DD4E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B13072272A95D3EF001DD4E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				B13072292A95D3EF001DD4E4 /* ViewController.swift */,
+				B10EDC502A95FA4200292512 /* CreateTodoController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -78,9 +83,18 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B10EDC4D2A95E56000292512 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B10EDC4E2A95E57500292512 /* Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		B13072192A95D3EF001DD4E4 = {
 			isa = PBXGroup;
 			children = (
+				B10EDC4D2A95E56000292512 /* Utilities */,
 				B10EDC4C2A95DF1100292512 /* Model */,
 				B13072242A95D3EF001DD4E4 /* todo_app_firebase */,
 				B13072232A95D3EF001DD4E4 /* Products */,
@@ -237,10 +251,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B10EDC4F2A95E57500292512 /* Extensions.swift in Sources */,
 				B130722A2A95D3EF001DD4E4 /* ViewController.swift in Sources */,
 				B13072262A95D3EF001DD4E4 /* AppDelegate.swift in Sources */,
 				B13072282A95D3EF001DD4E4 /* SceneDelegate.swift in Sources */,
 				B10EDC492A95DD1300292512 /* TodoCell.swift in Sources */,
+				B10EDC512A95FA4200292512 /* CreateTodoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
