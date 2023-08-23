@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94A11E4AB6AEF2CB8C0CA2AA /* Pods_todo_app_firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F766E414A54A79141F621116 /* Pods_todo_app_firebase.framework */; };
+		B10EDC492A95DD1300292512 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EDC482A95DD1300292512 /* TodoCell.swift */; };
 		B13072262A95D3EF001DD4E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13072252A95D3EF001DD4E4 /* AppDelegate.swift */; };
 		B13072282A95D3EF001DD4E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13072272A95D3EF001DD4E4 /* SceneDelegate.swift */; };
 		B130722A2A95D3EF001DD4E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13072292A95D3EF001DD4E4 /* ViewController.swift */; };
 		B130722D2A95D3EF001DD4E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B130722B2A95D3EF001DD4E4 /* Main.storyboard */; };
 		B130722F2A95D3F0001DD4E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B130722E2A95D3F0001DD4E4 /* Assets.xcassets */; };
 		B13072322A95D3F0001DD4E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13072302A95D3F0001DD4E4 /* LaunchScreen.storyboard */; };
+		B130723A2A95D8E7001DD4E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B13072392A95D8E7001DD4E4 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D1971DDFD023E18A68AC799 /* Pods-todo_app_firebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todo_app_firebase.debug.xcconfig"; path = "Target Support Files/Pods-todo_app_firebase/Pods-todo_app_firebase.debug.xcconfig"; sourceTree = "<group>"; };
+		AA3C6EDA2D31B8D8911B25C0 /* Pods-todo_app_firebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todo_app_firebase.release.xcconfig"; path = "Target Support Files/Pods-todo_app_firebase/Pods-todo_app_firebase.release.xcconfig"; sourceTree = "<group>"; };
+		B10EDC482A95DD1300292512 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 		B13072222A95D3EF001DD4E4 /* todo_app_firebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todo_app_firebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13072252A95D3EF001DD4E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B13072272A95D3EF001DD4E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +30,8 @@
 		B130722E2A95D3F0001DD4E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B13072312A95D3F0001DD4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B13072332A95D3F0001DD4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B13072392A95D8E7001DD4E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F766E414A54A79141F621116 /* Pods_todo_app_firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_todo_app_firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,53 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94A11E4AB6AEF2CB8C0CA2AA /* Pods_todo_app_firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		73DB5582053BF9253362B6E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F766E414A54A79141F621116 /* Pods_todo_app_firebase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B10EDC4A2A95DEDA00292512 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B13072292A95D3EF001DD4E4 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B10EDC4B2A95DEF200292512 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B130722B2A95D3EF001DD4E4 /* Main.storyboard */,
+				B10EDC482A95DD1300292512 /* TodoCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B10EDC4C2A95DF1100292512 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B13072192A95D3EF001DD4E4 = {
 			isa = PBXGroup;
 			children = (
+				B10EDC4C2A95DF1100292512 /* Model */,
 				B13072242A95D3EF001DD4E4 /* todo_app_firebase */,
 				B13072232A95D3EF001DD4E4 /* Products */,
+				B7913A37AF54DE3D1DE7C11D /* Pods */,
+				73DB5582053BF9253362B6E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +102,23 @@
 			children = (
 				B13072252A95D3EF001DD4E4 /* AppDelegate.swift */,
 				B13072272A95D3EF001DD4E4 /* SceneDelegate.swift */,
-				B13072292A95D3EF001DD4E4 /* ViewController.swift */,
-				B130722B2A95D3EF001DD4E4 /* Main.storyboard */,
+				B10EDC4A2A95DEDA00292512 /* Controllers */,
+				B10EDC4B2A95DEF200292512 /* View */,
 				B130722E2A95D3F0001DD4E4 /* Assets.xcassets */,
 				B13072302A95D3F0001DD4E4 /* LaunchScreen.storyboard */,
 				B13072332A95D3F0001DD4E4 /* Info.plist */,
+				B13072392A95D8E7001DD4E4 /* GoogleService-Info.plist */,
 			);
 			path = todo_app_firebase;
+			sourceTree = "<group>";
+		};
+		B7913A37AF54DE3D1DE7C11D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D1971DDFD023E18A68AC799 /* Pods-todo_app_firebase.debug.xcconfig */,
+				AA3C6EDA2D31B8D8911B25C0 /* Pods-todo_app_firebase.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B13072362A95D3F0001DD4E4 /* Build configuration list for PBXNativeTarget "todo_app_firebase" */;
 			buildPhases = (
+				8F1A9D1526DAD530BFF0AD7D /* [CP] Check Pods Manifest.lock */,
 				B130721E2A95D3EF001DD4E4 /* Sources */,
 				B130721F2A95D3EF001DD4E4 /* Frameworks */,
 				B13072202A95D3EF001DD4E4 /* Resources */,
+				6C21FD832A9C5C277C965F23 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +182,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				B13072322A95D3F0001DD4E4 /* LaunchScreen.storyboard in Resources */,
+				B130723A2A95D8E7001DD4E4 /* GoogleService-Info.plist in Resources */,
 				B130722F2A95D3F0001DD4E4 /* Assets.xcassets in Resources */,
 				B130722D2A95D3EF001DD4E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C21FD832A9C5C277C965F23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-todo_app_firebase/Pods-todo_app_firebase-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-todo_app_firebase/Pods-todo_app_firebase-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-todo_app_firebase/Pods-todo_app_firebase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F1A9D1526DAD530BFF0AD7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-todo_app_firebase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B130721E2A95D3EF001DD4E4 /* Sources */ = {
@@ -141,6 +240,7 @@
 				B130722A2A95D3EF001DD4E4 /* ViewController.swift in Sources */,
 				B13072262A95D3EF001DD4E4 /* AppDelegate.swift in Sources */,
 				B13072282A95D3EF001DD4E4 /* SceneDelegate.swift in Sources */,
+				B10EDC492A95DD1300292512 /* TodoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +382,7 @@
 		};
 		B13072372A95D3F0001DD4E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D1971DDFD023E18A68AC799 /* Pods-todo_app_firebase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,6 +410,7 @@
 		};
 		B13072382A95D3F0001DD4E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA3C6EDA2D31B8D8911B25C0 /* Pods-todo_app_firebase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
