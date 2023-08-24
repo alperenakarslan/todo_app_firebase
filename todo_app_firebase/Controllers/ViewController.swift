@@ -6,10 +6,18 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UITableViewController {
     
     // Properties
+    
+    var todoItems = [TodoItem]() {
+        didSet {
+            print("Todo items was set")
+            tableView.reloadData()
+        }
+    }
     
     let reuseIdentifier = "TodoCell"
     
@@ -28,6 +36,10 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         
         configureTableView()
+//        PostService.shared.fetchAllItems()
+        PostService.shared.fetchAllItems{ (allItems) in
+            self.todoItems = allItems
+        }
     }
     
     // Selectors
@@ -58,7 +70,7 @@ class ViewController: UITableViewController {
 // UITableViewDelegate - UITableViewDataSource
 extension ViewController{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return todoItems.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,12 +78,16 @@ extension ViewController{
         else {
             return UITableViewCell()
         }
+        
+        cell.todoItem = todoItems[indexPath.row]
+        
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // Update status of the cell
         // Incomplete -> Finished
+        
         
         
         tableView.deselectRow(at: indexPath, animated: true)
