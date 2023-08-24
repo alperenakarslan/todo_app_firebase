@@ -31,15 +31,12 @@ class ViewController: UITableViewController {
         return button
        
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTableView()
-//        PostService.shared.fetchAllItems()
-        PostService.shared.fetchAllItems{ (allItems) in
-            self.todoItems = allItems
-        }
+        fetchItems()
     }
     
     // Selectors
@@ -49,7 +46,18 @@ class ViewController: UITableViewController {
         present(vc, animated: true, completion: nil)
     }
     
+    // API
+    
+    private func fetchItems() {
+        //        PostService.shared.fetchAllItems()
+        PostService.shared.fetchAllItems{ (allItems) in
+            self.todoItems = allItems
+        }
+    }
+    
+    
     // Helper Func
+    
     func configureTableView(){
         tableView.backgroundColor = .white
         tableView.register(TodoCell.self, forCellReuseIdentifier: reuseIdentifier)
@@ -88,9 +96,12 @@ extension ViewController{
         // Update status of the cell
         // Incomplete -> Finished
         
+        let todoItem = todoItems[indexPath.row]
         
-        
-        tableView.deselectRow(at: indexPath, animated: true)
+        PostService.shared.updateItemStatus(todoId: todoItem.id, isComplete: true) { (err, ref) in
+            self.tableView.deselectRow(at: indexPath, animated: true)
+            self.fetchItems()
+        }
     }
 }
 

@@ -32,7 +32,9 @@ struct PostService {
         
         var allItems = [TodoItem]()
         
-        DB_REF.child("items").observe(.childAdded) { (snapshot) in
+        DB_REF.child("items")
+            .queryOrdered(byChild: "isComplete")
+            .observe(.childAdded) { (snapshot) in
             fetchSingleItem(id: snapshot.key) { (item) in
                 allItems.append(item)
                 completion(allItems)
