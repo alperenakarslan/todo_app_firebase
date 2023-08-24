@@ -37,6 +37,8 @@ class ViewController: UITableViewController {
         
         configureTableView()
         fetchItems()
+        
+        navigationItem.title = "My Todos App"
     }
     
     // Selectors
@@ -44,6 +46,18 @@ class ViewController: UITableViewController {
     @objc func createNewTodo(){
         let vc = CreateTodoController()
         present(vc, animated: true, completion: nil)
+    }
+    
+    @objc func handleRefresh() {
+        self.tableView.refreshControl?.beginRefreshing()
+        
+        if let isRefreshing = self.tableView.refreshControl?.isRefreshing,
+           isRefreshing {
+            DispatchQueue.main.async { [self] in
+                fetchItems()
+                tableView.refreshControl?.endRefreshing()
+            }
+        }
     }
     
     // API
@@ -59,12 +73,19 @@ class ViewController: UITableViewController {
     // Helper Func
     
     func configureTableView(){
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = UIColor(red: 20/255, green: 80/255, blue: 163/255, alpha: 1.0)
         tableView.register(TodoCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.rowHeight = 75
-        tableView.separatorColor = .black
+        tableView.separatorColor = UIColor(red: 20/255, green: 80/255, blue: 163/255, alpha: 1.0)
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         tableView.tableFooterView = UIView()
+        
+        // Refresh Control
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = .white
+        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        tableView.refreshControl = refreshControl
         
         // Create new todo
         tableView.addSubview(createNewButton)

@@ -13,28 +13,31 @@ class CreateTodoController :  UIViewController{
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20)
-        label.textColor = .black
+        label.textColor = .white
         label.text = "Create a new TODO item"
         label.textAlignment = .center
         return label
     }()
     
     private let itemTextField: UITextField = {
-        let tf = UITextField()
+        let tf = TextField()
         tf.font = .systemFont(ofSize: 24)
         tf.textColor = .white
         tf.backgroundColor = .lightGray
+        tf.layer.cornerRadius = 15
+        tf.placeholder = "Please type a new task..."
+        tf.tintColor = .systemGreen
         return tf
     }()
     
     private lazy var createButton: UIButton = {
         let button = UIButton()
         button.setTitle("Create title", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 24)
-        button.backgroundColor = .systemGreen
+        button.backgroundColor = UIColor(red: 26/255, green: 93/255, blue: 26/255, alpha: 1.0)
         button.addTarget(self, action: #selector(createItemPressed), for: .touchUpInside)
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = 15
         return button
         
     }()
@@ -61,7 +64,7 @@ class CreateTodoController :  UIViewController{
     
     func configureUI(){
         // Title Label
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 20/255, green: 80/255, blue: 163/255, alpha: 1.0)
         view.addSubview(titleLabel)
         titleLabel.anchor(top: view.topAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 16, paddingRight: 16)
         
@@ -81,5 +84,21 @@ extension CreateTodoController: UITextFieldDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return true
+    }
+}
+
+class TextField: UITextField {
+    let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 8)
+    
+    override open func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+    
+    override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+    
+    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
     }
 }

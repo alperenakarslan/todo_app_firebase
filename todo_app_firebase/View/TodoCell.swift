@@ -17,10 +17,10 @@ class TodoCell: UITableViewCell {
             
             if let isComplete = todoItem?.isComplete, isComplete {
                 statusLabel.text = "Status : Completed"
-                statusLabel.textColor = .systemGreen
+                statusLabel.textColor = UIColor(red: 26/255, green: 93/255, blue: 26/255, alpha: 1.0)
             } else {
                 statusLabel.text = "Status : Incompleted"
-                statusLabel.textColor = .systemRed
+                statusLabel.textColor = UIColor(red: 205/255, green: 24/255, blue: 24/255, alpha: 1.0)
             }
         }
     }
@@ -29,7 +29,7 @@ class TodoCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 24)
-        label.textColor = .black
+        label.textColor = UIColor(red: 20/255, green: 80/255, blue: 163/255, alpha: 1.0)
         label.text = "Label Title"
         return label
     }()
@@ -46,7 +46,7 @@ class TodoCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = .white
+        backgroundColor = UIColor(red: 185/255, green: 180/255, blue: 199/255, alpha: 1.0)
         addSubview(titleLabel)
         titleLabel.anchor(top: topAnchor, left: leftAnchor, paddingTop: 4, paddingLeft: 8 )
         addSubview(statusLabel)
